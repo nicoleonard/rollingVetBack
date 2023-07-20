@@ -1,14 +1,14 @@
 {
-  "name": "backend-blog-recetas",
+  "name": "rollingvetback",
   "version": "1.0.0",
-  "description": "Backend blog recetas",
+  "description": "Backend RollingVet",
   "main": "index.js",
   "scripts": {
     "start": "babel-node index.js",
     "dev": "nodemon --exec babel-node index.js"
   },
   "keywords": [],
-  "author": "Nico Leonard",
+  "author": "Grupo 2",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
