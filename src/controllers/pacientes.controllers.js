@@ -31,12 +31,3 @@ export const crearPaciente = async (req,res)=>{
     }
 }
 
-export const borrarPaciente = async (req,res)=>{
-    try{
-        await Paciente.findByIdAndDelete(req.params.id)
-        res.status(200).json({mensaje: 'El paciente se borró correctamente'})
-    } catch (error){
-        console.log(error)
-        res.status(404).json({mensaje: 'No se pudo borrar el paciente'})
-    }
-}
