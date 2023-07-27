@@ -2,7 +2,7 @@ import Paciente from "../models/pacientes"
 
 export const obtenerPacientes = async (req,res)=>{
     try{
-        const pacientes = await Pacientes.find()
+        const pacientes = await Paciente.find()
         res.status(200).json(pacientes)
     } catch (error){
         console.log(error)
@@ -12,8 +12,8 @@ export const obtenerPacientes = async (req,res)=>{
 
 export const obtenerPaciente = async (req,res)=>{
     try{
-        const paciente = await Paciente.findById(req.params.id, req.body)
-        res.status(200).json(paciente)
+        const pacientes = await Paciente.findById(req.params.id, req.body)
+        res.status(200).json(pacientes)
     } catch (error){
         console.log(error)
         res.status(400).json({mensaje: 'No se pudo encontrar los pacientes'})
