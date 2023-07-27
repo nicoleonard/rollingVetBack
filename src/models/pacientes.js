@@ -20,8 +20,6 @@ const pacienteSchema = new Schema({
       },
       teléfono: {
         type: Number,
-        min: 9,
-        max: 14,
         required: true,
       },
       dirección: {
