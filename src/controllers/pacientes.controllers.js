@@ -40,13 +40,3 @@ export const borrarPaciente = async (req,res)=>{
         res.status(404).json({mensaje: 'No se pudo borrar el paciente'})
     }
 }
-
-export const editarPaciente = async (req,res)=>{
-    try{
-        await Paciente.findByIdAndUpdate(req.params.id, req.body)
-        res.status(200).json({mensaje: 'El paciente se editó correctamente'})
-    } catch (error){
-        console.log(error)
-        res.status(400).json({mensaje: 'No se pudo modificar el paciente'})
-    }
-}
