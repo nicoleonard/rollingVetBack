@@ -3,51 +3,41 @@ import {Schema, model} from 'mongoose'
 const pacienteSchema = new Schema({
     nombre: {
         type: String,
-        minLength: 5,
-        maxLength: 100,
+        minLength: 2,
+        maxLength: 14,
         required: true,
         unique: true
     },
     apellido: {
         type: String,
-        minLength: 12,
-        maxLength: 300,
+        minLength: 2,
+        maxLength: 14,
         required: true,
     },
     email: {
-        type: Number,
-        min: 0,
-        max: 50000,
+        type: String,
         required: true,
       },
       teléfono: {
         type: Number,
-        min: 0,
-        max: 50000,
+        min: 9,
+        max: 14,
         required: true,
       },
       dirección: {
-        type: Number,
-        min: 0,
-        max: 50000,
+        type: String,
         required: true,
       },
       nombreMascota: {
-        type: Number,
-        min: 0,
-        max: 50000,
+        type: String,
         required: true,
       },
       especie: {
-        type: Number,
-        min: 0,
-        max: 50000,
+        type: String,
         required: true,
       },
       raza: {
-        type: Number,
-        min: 0,
-        max: 50000,
+        type:String,
         required: true,
       }
 })
