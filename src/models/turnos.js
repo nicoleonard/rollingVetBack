@@ -8,7 +8,6 @@ const turnoSchema = new Schema({
     hora: {
         type: String,
         required: true,
-        unique: true
     },
     detalleCita: {
         type: String
