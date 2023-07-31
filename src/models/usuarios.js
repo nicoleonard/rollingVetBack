@@ -18,17 +18,17 @@ const usuariosSchema = new Schema({
     maxLength: 300,
     required: true,
   },
-  /*tipo: {
-    type: Number,
-    min: 0,
-    max: 50000,
+  tipo: {
+    type: String,
+    minLength: 1,
+    maxLength: 10,
     required: true,
-  },*/
+  },
   password: {
     type: String,
     required: true,
     //minLength: 8,
-  }
+  },
 });
 
 const Usuario = model("usuario", usuariosSchema);

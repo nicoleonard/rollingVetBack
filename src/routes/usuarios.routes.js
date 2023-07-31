@@ -1,8 +1,7 @@
 import { Router } from 'express';
 import { obtenerUsuarios, obtenerUsuario, crearUsuario, borrarUsuario, editarUsuario } from '../controllers/usuarios.controllers';
-import validarUsuario from '../helpers/validarUsuario';
 //aqui van las validaciones del usuario
-//import validarServicio from '../helpers/validarServicio';
+import validarUsuario from '../helpers/validarUsuario';
 
 const router = Router();
 

@@ -5,8 +5,8 @@ const validarUsuario = [
   check("usuario")
     .notEmpty()
     .withMessage("El usuario es requerido")
-    .isLength({ min: 6, max: 256 })
-    .withMessage("El email debe tener entre 6 y 256 caracteres"),
+    .isLength({ min: 3, max: 100 })
+    .withMessage("El usuario debe tener entre 3 y 100 caracteres"),
   check("email")
     .notEmpty()
     .withMessage("El email es requerido")
@@ -14,6 +14,9 @@ const validarUsuario = [
     .withMessage("Debe ser un email valido")
     .isLength({ min: 6, max: 256 })
     .withMessage("El email debe tener entre 6 y 256 caracteres"),
+  check("tipo")
+    .notEmpty()
+    .withMessage("El tipo es requerido"),
   check("password")
     .notEmpty()
     .withMessage("La contraseña es requerida")
