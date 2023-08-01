@@ -1,4 +1,4 @@
-import Servicio from "../models/servicio"
+import Servicio from "../models/servicios"
 
 export const obtenerServicios = async (req,res)=>{
     try{
