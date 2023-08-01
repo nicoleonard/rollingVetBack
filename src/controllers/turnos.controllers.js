@@ -13,7 +13,7 @@ export const obtenerTurnos = async (req,res)=>{
 export const obtenerTurno = async (req,res)=>{
     try{
         const turno = await Turno.findById(req.params.id, req.body)
-        res.status(200).json(servicio)
+        res.status(200).json(turno)
     } catch (error){
         console.log(error)
         res.status(400).json({mensaje: 'No se pudo encontrar el turno'})
