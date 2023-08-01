@@ -10,7 +10,7 @@ export const obtenerPacientes = async (req,res)=>{
     }
 }
 
-export const obtenerPaciente = async (req,res)=>{
+export const obtenerUnPaciente = async (req,res)=>{
     try{
         const pacientes = await Paciente.findById(req.params.id, req.body)
         res.status(200).json(pacientes)
