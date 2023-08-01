@@ -5,6 +5,8 @@ import path from 'path'
 import 'dotenv/config';
 import './src/database/dbConnection';
 import turnosRouter from './src/routes/turnos.routes';
+import serviciosRouter from './src/routes/servicios.routes';
+import usuariosRouter from './src/routes/usuarios.routes';
 
 const instanciaExpress = express();
 
@@ -19,4 +21,6 @@ instanciaExpress.use(morgan('dev')) // muestra informacion del status de las pet
 
 instanciaExpress.use(express.static(path.join(__dirname, '/public' ))) // uso static para asignar index.html que se encuentre en la ruta provista por path como el archivo a mostrar cuando se acceda a la raiz del backend
 
-instanciaExpress.use('/apirollingvet', turnosRouter);
+instanciaExpress.use('/apirollingvet/turn', turnosRouter);
+instanciaExpress.use('/apirollingvet/serv', serviciosRouter);
+instanciaExpress.use('/apirollingvet/auth', usuariosRouter);

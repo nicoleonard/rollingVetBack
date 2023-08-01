@@ -17,7 +17,7 @@ const validarUsuario = [
   check("tipo")
     .notEmpty()
     .withMessage("El tipo es requerido"),
-  check("password")
+  check("clave")
     .notEmpty()
     .withMessage("La contraseña es requerida")
     .isLength({ min: 8, max: 16 })
