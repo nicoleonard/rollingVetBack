@@ -23,7 +23,7 @@ const validarServicio = [
       .withMessage(
         "El precio minimo es 0. El precio maximo es de $50000"
       ),
-    (req, res, next)=>{ resultadoValidacion(req, res, next)} 
+    (req, res, next)=>{ resultadoValidacion(req, res, next)}
   ];
 
   export default validarServicio;
