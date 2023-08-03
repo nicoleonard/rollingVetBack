@@ -23,9 +23,10 @@ const turnoSchema = new Schema({
     usuario: {
         type: String,
         required: true
+    },
+    turnoLibre: {
+        type: Boolean
     }
 })
 
-const Turno = model("turno", turnoSchema);
-
-export default Turno;
+export const Turno = model("turno", turnoSchema);
