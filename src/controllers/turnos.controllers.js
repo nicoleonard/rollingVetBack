@@ -2,16 +2,17 @@ import {Turno} from "../models/turnos"
 
 export const inicializarTurno = async (req,res) =>{
     try{
-        console.log(req.body)
+        
         const {hora,veterinario}=req.body
         const fecha = new Date()
-        const nuevoTurno = new Turno({veterinario,hora,"turnoLibre": true,"detalleCita": "turno libre", "usuario": "libre", "paciente": "libre", "fecha": fecha.getDate()})
-        await nuevoTurno.save()
+        const nuevoTurno = new Turno({"_id":req.params.id ,veterinario,hora,"turnoLibre": true,"detalleCita": "turno liberado", "usuario": "libre", "paciente": "libre", "fecha": fecha.getDate()})
+        console.log(nuevoTurno)
+        await Turno.findByIdAndUpdate(req.params.id, nuevoTurno)
 
-        res.status(201).json({mensaje: `El turno ${nuevoTurno.hora} se creó correctamente`})
+        res.status(200).json({mensaje: 'El turno se inicializó correctamente'})
     }catch(error){
         console.log(error)
-        res.status(404).json({mensaje: `No se pudo crear el turno ${nuevoTurno.hora}`})
+        res.status(404).json({mensaje: `No se pudo inicializar el turno ${nuevoTurno.hora} ${nuevoTurno.veterinario}`})
     }
 
 }
