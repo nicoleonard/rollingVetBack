@@ -24,17 +24,16 @@ export const inicializarTurnos = async (req,res) =>{
         const fecha = new Date()
         const paquete = [];
         veterinarios.map(veterinario => {
-            for(let i=0; i<horarios;i++){
-                paquete.push({veterinario: veterinario, hora: i, turnoLibre: true, detalleCita: "turno libre", usuario: "libre", paciente: "libre", fecha: fecha.getDate()})
+            for(let i=0; i<horarios.length;i++){
+                paquete.push({veterinario: veterinario, hora: horarios[i], turnoLibre: true, detalleCita: "turno libre", usuario: "libre", paciente: "libre", fecha: fecha.getDate(), servicios:"libre"})
             }
-            
         });
-        console.log(paquete)
-        const respuesta = await Turno.insertMany(paquete)
-        res.status(201).json({mensaje: `${respuesta}`})
+        await Turno.insertMany(paquete)
+        res.status(201).json({mensaje: "Los turnos se han inicializado con éxito"})
+
     }catch(error){
         console.log(error)
-        res.status(404).json({mensaje: `${respuesta}`})
+        res.status(404).json({mensaje: `No se pudo inicializar los turnos`})
     }
 
 }
@@ -60,27 +59,6 @@ export const obtenerTurno = async (req,res)=>{
     }
 }
 
-export const crearTurno = async (req,res)=>{
-    try{
-        const nuevoTurno = new Turno(req.body)
-        await nuevoTurno.save()
-        res.status(201).json({mensaje: 'El turno se creó correctamente'})
-    } catch (error){
-        console.log(error)
-        res.status(404).json({mensaje: 'No se pudo crear el turno'})
-    }
-}
-
-export const borrarTurno = async (req,res)=>{
-    try{
-        await Turno.findByIdAndDelete(req.params.id)
-        res.status(200).json({mensaje: 'El turno se borró correctamente'})
-    } catch (error){
-        console.log(error)
-        res.status(404).json({mensaje: 'No se pudo borrar el turno'})
-    }
-}
-
 export const borrarTurnos = async (req,res)=>{
     try{
         await Turno.deleteMany()
@@ -91,8 +69,9 @@ export const borrarTurnos = async (req,res)=>{
     }
 }
 
-export const editarTurno = async (req,res)=>{
+export const actualizarTurno = async (req,res)=>{
     try{
+        console.log(req.params.id)
         await Turno.findByIdAndUpdate(req.params.id, req.body)
         res.status(200).json({mensaje: 'El turno se editó correctamente'})
     } catch (error){
