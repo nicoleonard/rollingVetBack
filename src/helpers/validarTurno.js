@@ -4,8 +4,7 @@ import resultadoValidacion from "./resultadoValidacion";
 const validarTurno = [
     check("veterinario")
       .notEmpty()
-      .withMessage("El nombre del veterinario no puede estar vacío")    
-      .isIn(['Dr. Pablo', 'Dr. Mariano']),
+      .withMessage("El nombre del veterinario no puede estar vacío"),
     check("hora")
       .notEmpty()
       .withMessage("El horario del turno no puede estar vacío"),
@@ -25,6 +24,9 @@ const validarTurno = [
       check("usuario")
       .notEmpty()
       .withMessage("El usuario del turno no puede estar vacío"),
+      check("servicios")
+      .notEmpty()
+      .withMessage("El servicio del turno no puede estar vacío"),
     (req, res, next)=>{ resultadoValidacion(req, res, next)} 
   ];
 
