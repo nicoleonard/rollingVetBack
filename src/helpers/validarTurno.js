@@ -24,6 +24,9 @@ const validarTurno = [
       check("usuario")
       .notEmpty()
       .withMessage("El usuario del turno no puede estar vacío"),
+      check("servicios")
+      .notEmpty()
+      .withMessage("El servicio del turno no puede estar vacío"),
     (req, res, next)=>{ resultadoValidacion(req, res, next)} 
   ];
 

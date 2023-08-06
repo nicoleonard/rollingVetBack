@@ -24,6 +24,10 @@ const turnoSchema = new Schema({
         type: String,
         required: true
     },
+    servicios:{
+        type: String,
+        required: true
+    },
     turnoLibre: {
         type: Boolean
     }
