@@ -9,14 +9,14 @@ const validarServicio = [
       .withMessage(
         "El titulo del servicio debe tener al menos 5 caracteres"
       ),    
-    check("Descripcion")
+    check("descripcion")
       .notEmpty()
       .withMessage("La descripcion del servicio no puede estar vacia")
       .isLength({ min: 12, max: 300 })
       .withMessage(
         "La descripcion del servicio debe tener al menos 12 y maximo 300 caracteres"),
 
-    check("Precio")
+    check("precio")
       .notEmpty()
       .withMessage("El precio es requerido")
       .isFloat({min: 0, max: 50000})
