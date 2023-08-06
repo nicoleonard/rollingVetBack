@@ -7,6 +7,7 @@ import './src/database/dbConnection';
 import turnosRouter from './src/routes/turnos.routes';
 import serviciosRouter from './src/routes/servicios.routes';
 import usuariosRouter from './src/routes/usuarios.routes';
+import pacientesRouter from './src/routes/pacientes.routes';
 
 const instanciaExpress = express();
 
@@ -24,3 +25,4 @@ instanciaExpress.use(express.static(path.join(__dirname, '/public' ))) // uso st
 instanciaExpress.use('/apirollingvet/turn', turnosRouter);
 instanciaExpress.use('/apirollingvet/serv', serviciosRouter);
 instanciaExpress.use('/apirollingvet/auth', usuariosRouter);
+instanciaExpress.use('/apirollingvet/paci', pacientesRouter);
