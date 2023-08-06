@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { obtenerTurnos, borrarTurno, crearTurno, editarTurno, obtenerTurno, inicializarTurno, borrarTurnos,inicializarTurnos } from '../controllers/turnos.controllers';
+import { obtenerTurnos, actualizarTurno, obtenerTurno, inicializarTurno, borrarTurnos,inicializarTurnos } from '../controllers/turnos.controllers';
 import validarTurno from '../helpers/validarTurno';
 
 const router = Router();
 
-router.route('/turnos').get(obtenerTurnos).post(validarTurno, crearTurno).delete(borrarTurnos); 
-router.route('/turnos/:id').get(obtenerTurno).delete(borrarTurno).put(validarTurno, editarTurno)
+router.route('/turnos').get(obtenerTurnos).delete(borrarTurnos); 
+router.route('/turnos/:id').get(obtenerTurno).put(validarTurno, actualizarTurno)
 router.route('/').post(inicializarTurnos);
 router.route('/:id').put(inicializarTurno);
 export default router;
