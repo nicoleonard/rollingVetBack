@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { login, obtenerUsuarios, obtenerUsuario, crearUsuario, borrarUsuario, editarUsuario } from '../controllers/usuarios.controllers';
-//aqui van las validaciones del usuario
 import validarUsuario from '../helpers/validarUsuario';
 import validarJWT from '../helpers/token-verify';
 
